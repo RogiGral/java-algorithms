@@ -35,7 +35,8 @@ public class RSA {
         BigInteger q = new BigInteger(bits / 2, 100, r);
         modulus = p.multiply(q);
 
-        BigInteger m = (p.subtract(BigInteger.valueOf(1L))).multiply(q.subtract(BigInteger.ONE));publicKey = BigInteger.valueOf(3L);
+        BigInteger m = (p.subtract(BigInteger.valueOf(1L))).multiply(q.subtract(BigInteger.valueOf(1L)));
+        publicKey = BigInteger.valueOf(3L);
         while (m.gcd(publicKey).intValue() > 1) {
             publicKey = publicKey.add(BigInteger.valueOf(2L));
         }
